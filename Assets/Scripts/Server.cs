@@ -88,6 +88,10 @@ public class Server : MonoBehaviour
 					OnMyPosition(connectionId,float.Parse(splitData[1]),float.Parse(splitData[2]),float.Parse(splitData[3]));
 					break;
 
+				case "MESSAGETOSERVER":
+					OnGetMessage();
+					break;
+
 				default:
 					Debug.Log("Inalid message : " + msg);
 					break;
@@ -112,7 +116,10 @@ public class Server : MonoBehaviour
 			Send(m, unrealiableChannel, clients);
 		}
 	}
+	private void OnGetMessage()
+	{
 
+	}
 	private void OnConnection(int cnnId)
 	{
 		//Add him to a list

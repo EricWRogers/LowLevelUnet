@@ -60,10 +60,22 @@ public class Client : MonoBehaviour
 		HostTopology topo = new HostTopology (cc, MAX_CONNECTION);
 
 		hostId = NetworkTransport.AddHost (topo, 0);
-		connectionId = NetworkTransport.Connect (hostId, "10.248.160.132", port, 0, out error);
+		connectionId = NetworkTransport.Connect (hostId, "10.179.3.128", port, 0, out error);
 
 		connectionTime = Time.time;
 		isConnected = true;
+	}
+
+	public void SendMessage()
+	{
+		string inputMessage =  "MESSAGETOSERVER|" + GameObject.Find("MessageField").GetComponent<InputField>().text;
+		
+		Send(inputMessage, unrealiableChannel);
+	}
+
+	public void ReceiveMessage()
+	{
+
 	}
 
 	private void Update()
@@ -175,6 +187,8 @@ public class Client : MonoBehaviour
 			go.AddComponent<PlayerMotor>();
 			//Remove Canvas
 			GameObject.Find("Canvas").SetActive(false);
+			//Add Chat Canvas
+			//GameObject.Find("MessageHud").SetActive(true);
 			//Set Active
 			isStarted = true;
 		}
