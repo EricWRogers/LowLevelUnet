@@ -38,6 +38,13 @@ public class Client : MonoBehaviour
 	public GameObject playerPrefab;
 	public Dictionary<int,Player> players = new Dictionary<int, Player>();
 
+	private float lastMovementUpdate;
+	public float movementUpdateRate = 0.1f;
+
+	private string cmsg1 = " ";
+	private string cmsg2 = " ";
+	private string cmsg3 = " ";
+
 	public void Connect()
 	{
 		//Check if player has a name
@@ -60,7 +67,7 @@ public class Client : MonoBehaviour
 		HostTopology topo = new HostTopology (cc, MAX_CONNECTION);
 
 		hostId = NetworkTransport.AddHost (topo, 0);
-		connectionId = NetworkTransport.Connect (hostId, "10.179.3.128", port, 0, out error);
+		connectionId = NetworkTransport.Connect (hostId, "10.248.160.134", port, 0, out error);
 
 		connectionTime = Time.time;
 		isConnected = true;
@@ -68,13 +75,20 @@ public class Client : MonoBehaviour
 
 	public void SendMessage()
 	{
-		string inputMessage =  "MESSAGETOSERVER|" + GameObject.Find("MessageField").GetComponent<InputField>().text;
+		string inputMessage =  "MESSAGETOSERVER|" + playerName +'|'+ GameObject.Find("MessageField").GetComponent<InputField>().text;
 		
 		Send(inputMessage, unrealiableChannel);
 	}
 
-	public void ReceiveMessage()
+	public void ReceiveMessage(string msg)
 	{
+		
+		cmsg1 = cmsg2;
+		cmsg2 = cmsg3;
+		cmsg3 = msg;
+		GameObject.Find("Message1").GetComponent<UnityEngine.UI.Text>().text = cmsg1;
+		GameObject.Find("Message2").GetComponent<UnityEngine.UI.Text>().text = cmsg2;
+		GameObject.Find("Message3").GetComponent<UnityEngine.UI.Text>().text = cmsg3;
 
 	}
 
@@ -114,7 +128,10 @@ public class Client : MonoBehaviour
 					break;
 				case "ASKPOSITION":
 					OnAskPosition(splitData);
-					break;
+						break;
+				case "ChatFromServer":
+						ReceiveMessage(splitData[1]);
+						break;
 				case "DC":
 					PlayerDisconnected(int.Parse(splitData[1]));
 					break;
@@ -125,6 +142,11 @@ public class Client : MonoBehaviour
 			break;
 		case NetworkEventType.DisconnectEvent: //4
 			break;
+		}
+		if (Time.time - lastMovementUpdate > movementUpdateRate)
+		{
+			lastMovementUpdate = Time.time;
+			OnAskPosition();
 		}
 	}
 
@@ -148,6 +170,12 @@ public class Client : MonoBehaviour
 			string[] d = data[i].Split('%');
 			SpawnPlayer(d[0],int.Parse(d[1]));
 		}
+	}
+	private void OnAskPosition()	{
+		// Send local players position
+		Vector3 myPosition = players[ourClientId].avatar.transform.position;
+		string m = "MYPOSITION|" + myPosition.x.ToString() + '|' + myPosition.y.ToString() + '|' + myPosition.z.ToString();
+		Send(m, unrealiableChannel);
 	}
 
 	private void OnAskPosition(string[] data)

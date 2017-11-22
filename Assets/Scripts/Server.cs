@@ -30,7 +30,7 @@ public class Server : MonoBehaviour
 	private List<ServerClient> clients = new List<ServerClient>();
 
 	private float lastMovementUpdate;
-	public float movementUpdateRate = 0.5f;
+	public float movementUpdateRate = 0.1f;
 
 	private void Start()
 	{
@@ -87,9 +87,8 @@ public class Server : MonoBehaviour
 				case "MYPOSITION":
 					OnMyPosition(connectionId,float.Parse(splitData[1]),float.Parse(splitData[2]),float.Parse(splitData[3]));
 					break;
-
 				case "MESSAGETOSERVER":
-					OnGetMessage();
+						OnGetMessage(splitData[1],splitData[2]);
 					break;
 
 				default:
@@ -116,9 +115,13 @@ public class Server : MonoBehaviour
 			Send(m, unrealiableChannel, clients);
 		}
 	}
-	private void OnGetMessage()
+	private void OnGetMessage(string htifrom, string msg)
 	{
-
+		string c = "ChatFromServer|";
+		foreach (ServerClient sc in clients)
+			c += htifrom + " : " + msg + '|';
+		c += c.Trim('|');
+		Send(c, unrealiableChannel, clients);
 	}
 	private void OnConnection(int cnnId)
 	{
