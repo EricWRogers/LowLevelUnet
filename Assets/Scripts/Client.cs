@@ -234,6 +234,8 @@ public class Client : MonoBehaviour
 			go.AddComponent<PlayerMotor>();
 			//Remove Canvas
 			GameObject.Find("GetName").SetActive(false);
+			//Turn off camera
+			GameObject.Find("Main Camera").SetActive(false);
 			//Add Chat Canvas
 			//GameObject.Find("MessageHud").SetActive(true);
 			//Set Active

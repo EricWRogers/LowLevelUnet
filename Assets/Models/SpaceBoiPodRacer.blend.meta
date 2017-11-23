@@ -1,9 +1,9 @@
 fileFormatVersion: 2
 guid: 9c2947eb20841e44fad0c062bf31b6b3
-timeCreated: 1510458443
+timeCreated: 1511477711
 licenseType: Free
 ModelImporter:
-  serializedVersion: 22
+  serializedVersion: 21
   fileIDToRecycleName:
     100000: Cube
     100002: Cylinder
@@ -19,42 +19,10 @@ ModelImporter:
     4300002: Cylinder
     7400000: Default Take
     9500000: //RootNode
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: DarkMetal
-    second: {fileID: 2100000, guid: 46398872cd7066f40acdc667026ca86b, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Glass
-    second: {fileID: 2100000, guid: 3d7fdf91f6346ac4abe803f6077ce767, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Metal
-    second: {fileID: 2100000, guid: 73767956a405cc44f88e750ad6fd0466, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Screen
-    second: {fileID: 2100000, guid: d792d49b1b3e3214b886c521191d928d, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Vinyl
-    second: {fileID: 2100000, guid: 1a66535e0b375b2409a26130d7aa57ad, type: 2}
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: redDecal
-    second: {fileID: 2100000, guid: cdd88a5c1591c534f8f8bd9738ef76c1, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
     materialSearch: 1
-    materialLocation: 0
   animations:
     legacyGenerateAnimations: 4
     bakeSimulation: 0
@@ -67,7 +35,6 @@ ModelImporter:
     animationImportWarnings: 
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
-    importAnimatedCustomProperties: 0
     animationCompression: 1
     animationRotationError: 0.5
     animationPositionError: 0.5
