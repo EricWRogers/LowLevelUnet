@@ -67,7 +67,7 @@ public class Client : MonoBehaviour
 		HostTopology topo = new HostTopology (cc, MAX_CONNECTION);
 
 		hostId = NetworkTransport.AddHost (topo, 0);
-		connectionId = NetworkTransport.Connect (hostId, "10.248.160.134", port, 0, out error);
+		connectionId = NetworkTransport.Connect (hostId, "10.248.160.186", port, 0, out error);
 
 		connectionTime = Time.time;
 		isConnected = true;
@@ -83,9 +83,9 @@ public class Client : MonoBehaviour
 	public void ReceiveMessage(string msg)
 	{
 		
-		cmsg1 = cmsg2;
-		cmsg2 = cmsg3;
-		cmsg3 = msg;
+		cmsg3 = cmsg2;
+		cmsg2 = cmsg1;
+		cmsg1 = msg;
 		GameObject.Find("Message1").GetComponent<UnityEngine.UI.Text>().text = cmsg1;
 		GameObject.Find("Message2").GetComponent<UnityEngine.UI.Text>().text = cmsg2;
 		GameObject.Find("Message3").GetComponent<UnityEngine.UI.Text>().text = cmsg3;
