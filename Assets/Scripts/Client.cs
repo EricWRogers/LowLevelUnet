@@ -67,7 +67,7 @@ public class Client : MonoBehaviour
 		HostTopology topo = new HostTopology (cc, MAX_CONNECTION);
 
 		hostId = NetworkTransport.AddHost (topo, 0);
-		connectionId = NetworkTransport.Connect (hostId, "10.248.160.186", port, 0, out error);
+		connectionId = NetworkTransport.Connect (hostId, "10.248.160.132", port, 0, out error);
 
 		connectionTime = Time.time;
 		isConnected = true;
