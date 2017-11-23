@@ -214,7 +214,7 @@ public class Client : MonoBehaviour
 			//Add mobility
 			go.AddComponent<PlayerMotor>();
 			//Remove Canvas
-			GameObject.Find("Canvas").SetActive(false);
+			GameObject.Find("GetName").SetActive(false);
 			//Add Chat Canvas
 			//GameObject.Find("MessageHud").SetActive(true);
 			//Set Active
