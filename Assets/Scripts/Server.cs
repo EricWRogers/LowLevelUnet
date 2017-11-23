@@ -119,7 +119,7 @@ public class Server : MonoBehaviour
 	{
 		string c = "ChatFromServer|";
 		foreach (ServerClient sc in clients)
-			c += htifrom + " : " + msg + '|';
+			c += htifrom + ": " + msg + '|';
 		c += c.Trim('|');
 		Send(c, unrealiableChannel, clients);
 	}
