@@ -1,0 +1,159 @@
+fileFormatVersion: 2
+guid: 2338d846be2264c4490db002cbb58d1b
+timeCreated: 1510468108
+licenseType: Free
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: DesertTree
+    100002: DesertTree2
+    100004: //RootNode
+    100006: FinishLine
+    100008: Rock01
+    100010: Rock02
+    100012: StartingPlatform
+    400000: DesertTree
+    400002: DesertTree2
+    400004: //RootNode
+    400006: FinishLine
+    400008: Rock01
+    400010: Rock02
+    400012: StartingPlatform
+    2300000: DesertTree
+    2300002: DesertTree2
+    2300004: FinishLine
+    2300006: Rock01
+    2300008: Rock02
+    2300010: StartingPlatform
+    3300000: DesertTree
+    3300002: DesertTree2
+    3300004: FinishLine
+    3300006: Rock01
+    3300008: Rock02
+    3300010: StartingPlatform
+    4300000: FinishLine
+    4300002: StartingPlatform
+    4300004: Rock02
+    4300006: Rock01
+    4300008: DesertTree2
+    4300010: DesertTree
+    7400000: Default Take
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: DesertTree__DesertTreeDiffuse_png
+    second: {fileID: 2100000, guid: 68a5dd16d5ce6954693c3be4b5c9491a, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: EnvMetal
+    second: {fileID: 2100000, guid: 1ba6a17d17d860042a8aff6fc34d2518, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Gem__rock_png
+    second: {fileID: 2100000, guid: 29d1f9d7b09b7094ca1da972a4045904, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightsEnv1
+    second: {fileID: 2100000, guid: 6efb9a5262dfba444b6660aa9dbbd5ec, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightsEnv2
+    second: {fileID: 2100000, guid: 48d876ad14ee6dd429938edab08b51f9, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: LightsEnv3
+    second: {fileID: 2100000, guid: 8d1635ab90c11ab468e033c74aae9aa3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Rock__rock_png
+    second: {fileID: 2100000, guid: 29d1f9d7b09b7094ca1da972a4045904, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: redDecal
+    second: {fileID: 2100000, guid: cdd88a5c1591c534f8f8bd9738ef76c1, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 0
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
