@@ -44,6 +44,10 @@ public class Client : MonoBehaviour
 	private string cmsg1 = " ";
 	private string cmsg2 = " ";
 	private string cmsg3 = " ";
+	private string cmsg4 = " ";
+	private string cmsg5 = " ";
+	private string cmsg6 = " ";
+	private string cmsg7 = " ";
 
 	public void Connect()
 	{
@@ -82,13 +86,21 @@ public class Client : MonoBehaviour
 
 	public void ReceiveMessage(string msg)
 	{
-		
+		cmsg7 = cmsg6;
+		cmsg6 = cmsg5;
+		cmsg5 = cmsg4;
+		cmsg4 = cmsg3;
 		cmsg3 = cmsg2;
 		cmsg2 = cmsg1;
 		cmsg1 = msg;
 		GameObject.Find("Message1").GetComponent<UnityEngine.UI.Text>().text = cmsg1;
 		GameObject.Find("Message2").GetComponent<UnityEngine.UI.Text>().text = cmsg2;
 		GameObject.Find("Message3").GetComponent<UnityEngine.UI.Text>().text = cmsg3;
+		GameObject.Find("Message3").GetComponent<UnityEngine.UI.Text>().text = cmsg4;
+		GameObject.Find("Message3").GetComponent<UnityEngine.UI.Text>().text = cmsg5;
+		GameObject.Find("Message3").GetComponent<UnityEngine.UI.Text>().text = cmsg6;
+		GameObject.Find("Message3").GetComponent<UnityEngine.UI.Text>().text = cmsg7;
+
 
 	}
 
