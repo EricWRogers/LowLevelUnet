@@ -75,6 +75,8 @@ public class Client : MonoBehaviour
 
 		connectionTime = Time.time;
 		isConnected = true;
+
+		SendDebugMessage ("Player : " + playerName + " has joined");
 	}
 
 	public void SendMessage()
@@ -82,6 +84,11 @@ public class Client : MonoBehaviour
 		string inputMessage =  "MESSAGETOSERVER|" + playerName +'|'+ GameObject.Find("MessageField").GetComponent<InputField>().text;
 		
 		Send(inputMessage, unrealiableChannel);
+	}
+
+	private void SendDebugMessage(string dm)
+	{
+		string debugMessage = "MESSAGETOSERVER|Server|" + dm;
 	}
 
 	public void ReceiveMessage(string msg)
