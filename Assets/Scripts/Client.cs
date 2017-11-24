@@ -36,6 +36,7 @@ public class Client : MonoBehaviour
 	private string playerName;
 
 	public GameObject playerPrefab;
+	public GameObject notPlayerPrefab;
 	public Dictionary<int,Player> players = new Dictionary<int, Player>();
 
 	private float lastMovementUpdate;
@@ -225,11 +226,13 @@ public class Client : MonoBehaviour
 
 	private void SpawnPlayer(string playerName, int cnnId)
 	{
-		GameObject go = Instantiate(playerPrefab) as GameObject;
+		//GameObject go = Instantiate(playerPrefab) as GameObject;
+		GameObject go = null;
 
 		//Check if this is the local player
 		if(cnnId == ourClientId)
 		{
+			go = Instantiate(playerPrefab) as GameObject;
 			//Add mobility
 			go.AddComponent<ShipMovement>();
 			//Remove Canvas
@@ -240,6 +243,11 @@ public class Client : MonoBehaviour
 			//GameObject.Find("MessageHud").SetActive(true);
 			//Set Active
 			isStarted = true;
+
+
+		}
+		if (cnnId != ourClientId) {
+			go = Instantiate (notPlayerPrefab) as GameObject;
 		}
 
 		//If remote player

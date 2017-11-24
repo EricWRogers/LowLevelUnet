@@ -736,7 +736,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1662061751269424}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!81 &81838398083164306
 AudioListener:
   m_ObjectHideFlags: 1
@@ -1016,7 +1016,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17172c5675c47794daad712557cbae43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 1477590662153774, guid: 4416749dece35084c97c29e74c60a06b, type: 2}
 --- !u!114 &114236858704664838
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1061,7 +1061,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17172c5675c47794daad712557cbae43, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  bullet: {fileID: 0}
+  bullet: {fileID: 1477590662153774, guid: 4416749dece35084c97c29e74c60a06b, type: 2}
 --- !u!114 &114738362994371424
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -1073,7 +1073,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5615a6adea58d4f39b7e22e47fae610d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timerText: {fileID: 0}
+  timerText: {fileID: 114236858704664838}
 --- !u!114 &114884514313844934
 MonoBehaviour:
   m_ObjectHideFlags: 1

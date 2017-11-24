@@ -426,6 +426,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerPrefab: {fileID: 1378089338544250, guid: 82dd5a270a4ff418986d80bee67f831d,
     type: 2}
+  notPlayerPrefab: {fileID: 1404472752044094, guid: 085f9422490ce431bb948c6c1ca90213,
+    type: 2}
   movementUpdateRate: 0.1
 --- !u!4 &172742639
 Transform:
@@ -1115,7 +1117,7 @@ AudioListener:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1151322440}
-  m_Enabled: 1
+  m_Enabled: 0
 --- !u!124 &1151322442
 Behaviour:
   m_ObjectHideFlags: 0
