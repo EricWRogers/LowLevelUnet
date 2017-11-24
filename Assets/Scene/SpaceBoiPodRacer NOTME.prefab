@@ -120,6 +120,7 @@ GameObject:
   - component: {fileID: 136707957225929846}
   - component: {fileID: 136840056152282922}
   - component: {fileID: 54998130724777102}
+  - component: {fileID: 114674033223333598}
   m_Layer: 0
   m_Name: SpaceBoiPodRacer NOTME
   m_TagString: Untagged
@@ -662,6 +663,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bullet: {fileID: 1477590662153774, guid: 4416749dece35084c97c29e74c60a06b, type: 2}
+--- !u!114 &114674033223333598
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1404472752044094}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68f0c2eb055bf449ea75a013bb7ca02e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!136 &136707957225929846
 CapsuleCollider:
   m_ObjectHideFlags: 1
