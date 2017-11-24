@@ -39,7 +39,7 @@ public class ShipMovement : MonoBehaviour {
     {
         if(isMoving)
         {
-            float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("LeftH");
+            float yaw = turnSpeed * Time.deltaTime * Input.GetAxis("RWSX");
             float pitch = (turnSpeed * speed) * Time.deltaTime * Input.GetAxis("Vertical");
             float roll = (turnSpeed * speed) * Time.deltaTime * Input.GetAxis("Horizontal");
             myT.Rotate(pitch, yaw, roll);
@@ -47,12 +47,12 @@ public class ShipMovement : MonoBehaviour {
     }
     void Thrust()
     {
-        if (Input.GetAxis("Axis1D.SecondaryIndexTrigger") > 0 && Input.GetAxis("Axis1D.SecondaryIndexTrigger") > speed)
+		if (Input.GetAxis("LinuxLeftTrigger") > 0 && Input.GetAxis("LinuxLeftTrigger") > speed)
         {
-            speed = Input.GetAxis("Axis1D.SecondaryIndexTrigger");
+			speed = Input.GetAxis("LinuxLeftTrigger");
         }
         //Slow Down
-        if(speed > 0 || Input.GetAxis("Axis1D.SecondaryIndexTrigger") == 0)
+		if(speed > 0 || Input.GetAxis("LinuxLeftTrigger") == 0)
         {
             speed = speed - 0.1f * Time.deltaTime;
         }
