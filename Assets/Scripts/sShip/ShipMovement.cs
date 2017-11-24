@@ -6,9 +6,9 @@ public class ShipMovement : MonoBehaviour {
     [SerializeField] float movementSpeed = 50f;
     [SerializeField] float turnSpeed = 60f;
     private bool isMoving = false;
-    private float acceleration = 0.0f;
+    //private float acceleration = 0.0f;
     private float speed = 0.0f;
-    private float maxSpeed = 2.0f;
+    //private float maxSpeed = 2.0f;
 
     public Rigidbody rb;
 

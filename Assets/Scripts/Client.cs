@@ -31,7 +31,7 @@ public class Client : MonoBehaviour
 	private float connectionTime;
 	private bool isConnected = false;
 	private bool isStarted = false;
-	private byte error;
+	private byte error = 0;
 
 	private string playerName;
 
@@ -90,6 +90,7 @@ public class Client : MonoBehaviour
 	private void SendDebugMessage(string dm)
 	{
 		string debugMessage = "MESSAGETOSERVER|Server|" + dm;
+		Send (debugMessage, unrealiableChannel);
 	}
 
 	public void ReceiveMessage(string msg)
@@ -123,7 +124,7 @@ public class Client : MonoBehaviour
 		byte[] recBuffer = new byte[1024]; 
 		int bufferSize = 1024;
 		int dataSize;
-		byte error;
+		//byte error;
 		NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
 		switch (recData)
 		{
@@ -256,7 +257,7 @@ public class Client : MonoBehaviour
 		p.playerName = playerName;
 		p.connectionId = cnnId;
 		//Adding name over player
-		p.avatar.GetComponentInChildren<TextMesh>().text = playerName;
+		//p.avatar.GetComponentInChildren<TextMesh>().text = playerName;
 		//Adding new players stats to the list of players
 		players.Add(cnnId,p);
 	}

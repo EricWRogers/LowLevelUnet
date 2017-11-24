@@ -19,13 +19,13 @@ public class Server : MonoBehaviour
 	private int port = 7777;
 
 	private int hostId;
-	private int webHostId;
+	//private int webHostId;
 
 	private int reliableChannel;
 	private int unrealiableChannel;
 
 	private bool isStarted = false;
-	private byte error;
+	private byte error = 0;
 
 	private List<ServerClient> clients = new List<ServerClient>();
 
@@ -46,7 +46,7 @@ public class Server : MonoBehaviour
 
 		hostId = NetworkTransport.AddHost (topo, port, null);
 		//WEBSupport
-		webHostId = NetworkTransport.AddWebsocketHost(topo,port,null);
+		//webHostId = NetworkTransport.AddWebsocketHost(topo,port,null);
 
 		isStarted = true;
 	}
@@ -62,7 +62,7 @@ public class Server : MonoBehaviour
 		byte[] recBuffer = new byte[1024]; 
 		int bufferSize = 1024;
 		int dataSize;
-		byte error;
+		//byte error;
 		NetworkEventType recData = NetworkTransport.Receive(out recHostId, out connectionId, out channelId, recBuffer, bufferSize, out dataSize, out error);
 		switch (recData)
 		{
