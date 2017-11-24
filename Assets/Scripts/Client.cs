@@ -231,7 +231,7 @@ public class Client : MonoBehaviour
 		if(cnnId == ourClientId)
 		{
 			//Add mobility
-			go.AddComponent<PlayerMotor>();
+			go.AddComponent<ShipMovement>();
 			//Remove Canvas
 			GameObject.Find("GetName").SetActive(false);
 			//Turn off camera
