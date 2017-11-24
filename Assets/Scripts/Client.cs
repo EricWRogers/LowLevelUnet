@@ -213,7 +213,7 @@ public class Client : MonoBehaviour
 			{
 				
 				Vector3 position = Vector3.zero;
-				Quaternion rotation;
+				Quaternion rotation = Quaternion.identity;
 				position.x = float.Parse(d[1]);
 				position.y = float.Parse(d[2]);
 				position.z = float.Parse(d[3]);
