@@ -164,11 +164,11 @@ public class Client : MonoBehaviour
 		case NetworkEventType.DisconnectEvent: //4
 			break;
 		}
-		if (Time.time - lastMovementUpdate > movementUpdateRate)
+		/*if (Time.time - lastMovementUpdate > movementUpdateRate)
 		{
 			lastMovementUpdate = Time.time;
 			OnAskPosition();
-		}
+		}*/
 	}
 
 	private void Send(string message, int channelId)
@@ -192,12 +192,13 @@ public class Client : MonoBehaviour
 			SpawnPlayer(d[0],int.Parse(d[1]));
 		}
 	}
-	private void OnAskPosition()	{
+	/*private void OnAskPosition()	{
 		// Send local players position
 		Vector3 myPosition = players[ourClientId].avatar.transform.position;
-		string m = "MYPOSITION|" + myPosition.x.ToString() + '|' + myPosition.y.ToString() + '|' + myPosition.z.ToString();
+		Quaternion myRotation = players [ourClientId].avatar.rotation.position;
+		string m = "MYPOSITION|" + myPosition.x.ToString() + '|' + myPosition.y.ToString() + '|' + myPosition.z.ToString() + '|' + myRotation.x.ToString() + '|' + myRotation.y.ToString() + '|' + myRotation.z.ToString();
 		Send(m, unrealiableChannel);
-	}
+	}*/
 
 	private void OnAskPosition(string[] data)
 	{
@@ -212,16 +213,22 @@ public class Client : MonoBehaviour
 			{
 				
 				Vector3 position = Vector3.zero;
+				Quaternion rotation;
 				position.x = float.Parse(d[1]);
 				position.y = float.Parse(d[2]);
 				position.z = float.Parse(d[3]);
+				rotation.x = float.Parse(d[4]);
+				rotation.y = float.Parse(d[5]);
+				rotation.z = float.Parse(d[6]);
 				//Now 
 				players[int.Parse(d[0])].avatar.transform.position = position;
+				players[int.Parse(d[0])].avatar.transform.rotation = rotation;
 			}
 		}
 		// Send local players position
 		Vector3 myPosition = players[ourClientId].avatar.transform.position;
-		string m = "MYPOSITION|" + myPosition.x.ToString() + '|' + myPosition.y.ToString() + '|' + myPosition.z.ToString();
+		Quaternion myRotation = players [ourClientId].avatar.transform.rotation;
+		string m = "MYPOSITION|" + myPosition.x.ToString() + '|' + myPosition.y.ToString() + '|' + myPosition.z.ToString() + '|' + myRotation.x.ToString() + '|' + myRotation.y.ToString() + '|' + myRotation.z.ToString();
 		Send(m, unrealiableChannel);
 	}
 

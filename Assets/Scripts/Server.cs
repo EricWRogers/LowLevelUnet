@@ -10,6 +10,7 @@ public class ServerClient
 	public int connectionId;
 	public string playerName;
 	public Vector3 position;
+	public Quaternion rotation;
 }
 
 public class Server : MonoBehaviour 
@@ -85,7 +86,7 @@ public class Server : MonoBehaviour
 					OnNameIs(connectionId, splitData[1]);
 					break;
 				case "MYPOSITION":
-					OnMyPosition(connectionId,float.Parse(splitData[1]),float.Parse(splitData[2]),float.Parse(splitData[3]));
+				OnMyPosition(connectionId,float.Parse(splitData[1]),float.Parse(splitData[2]),float.Parse(splitData[3]),float.Parse(splitData[4]),float.Parse(splitData[5]),float.Parse(splitData[6]));
 					break;
 				case "MESSAGETOSERVER":
 						OnGetMessage(splitData[1],splitData[2]);
@@ -109,7 +110,7 @@ public class Server : MonoBehaviour
 			lastMovementUpdate = Time.time;
 			string m = "ASKPOSITION|";
 			foreach (ServerClient sc in clients)
-				m += sc.connectionId.ToString() + '%' + sc.position.x.ToString() + '%' + sc.position.y.ToString() + '%' + sc.position.z.ToString() + '|';
+				m += sc.connectionId.ToString() + '%' + sc.position.x.ToString() + '%' + sc.position.y.ToString() + '%' + sc.position.z.ToString() + '%' + sc.rotation.x.ToString() + '%' + sc.rotation.y.ToString() + '%' + sc.rotation.z.ToString() + '|';
 
 			m = m.Trim('|');
 			Send(m, unrealiableChannel, clients);
@@ -151,9 +152,10 @@ public class Server : MonoBehaviour
 		// Tell everyone that somebody else has disconnected
 		Send("DC|" + cnnId, reliableChannel, clients);
 	}
-	private void OnMyPosition(int cnnId, float x, float y, float z)
+	private void OnMyPosition(int cnnId, float x, float y, float z, float xr, float yr, float zr)
 	{
 		clients.Find(c => c.connectionId == cnnId).position = new Vector3(x,y,z);
+		clients.Find (r => r.connectionId == cnnId).rotation = new Quaternion (xr, yr, zr, 1);
 	}
 	private void OnNameIs(int cnnId, string playerName)
 	{
